@@ -43,7 +43,7 @@ const translations = {
     expSkoltechMeta: "Remote | Moscow, Russia | Sep 2025 - Apr 2026",
     expAssistantTitle: "Research Assistant",
     expAssistantMeta: "Part-time | Nov 2025 - Apr 2026",
-    expAssistantText: "Neural-data analysis, Python, computer vision, and neurobiology tasks.",
+    expAssistantText: "Neural-data analysis, Python, computer vision.",
     expInternTitle: "Intern",
     expInternMeta: "Internship | Sep 2025 - Nov 2025",
     expInternText: "ML, neural-data analysis, and computer vision.",
