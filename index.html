@@ -8,7 +8,7 @@
       content="Vladimir Baryshev - neurotechnology, biomedical AI, computer vision, EEG/BCI research, and medical image analysis."
     />
     <title>Vladimir Baryshev</title>
-    <link rel="icon" href="assets/vladimir-baryshev-photo.jpg" />
+    <link rel="icon" type="image/svg+xml" href="assets/bci-array.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -20,7 +20,7 @@
           <path d="M4 7h16M4 12h16M4 17h16" />
         </svg>
       </button>
-      <a class="mobile-name" href="#home">Vladimir Baryshev</a>
+      <a class="mobile-name" href="#home" data-i18n="personName">Vladimir Baryshev</a>
       <div class="top-actions" aria-label="Display settings">
         <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">RU</button>
         <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme">
@@ -86,7 +86,7 @@
       <section id="home" class="hero section">
         <div class="hero-copy">
           <p class="section-label" data-i18n="heroLabel">Neurotechnology | Biomedical AI | Computer Vision</p>
-          <h1>Vladimir Baryshev</h1>
+          <h1 data-i18n="personName">Vladimir Baryshev</h1>
           <p class="lead" data-i18n="heroLead">
             MSc student in Neurotechnology working at the intersection of neural signal processing,
             brain-computer interfaces, computer vision, and machine learning.
@@ -118,14 +118,15 @@
           <p class="section-label" data-i18n="thesisLabel">Master's thesis in progress</p>
           <h2 data-i18n="thesisTitle">Spatiotemporal neuromodulation and biomimetic neurointerfaces</h2>
           <p data-i18n="thesisText">
-            Adaptive stimulation algorithms and sensorimotor neurofeedback systems for next-generation neurointerfaces.
+            Goal: develop an adaptive closed-loop spatiotemporal neuromodulation algorithm aimed at restoring motor
+            function within personalized neurorehabilitation.
           </p>
+          <a class="inline-link" href="https://github.com/nikaabigail/DLC_OBS_Spinal_cord_stimulation" target="_blank" rel="noreferrer" data-i18n="thesisLink">GitHub repository</a>
         </article>
       </section>
 
       <section id="themes" class="section">
         <div class="section-heading">
-          <p class="section-label" data-i18n="themesLabel">Research direction</p>
           <h2 data-i18n="themesTitle">Research themes</h2>
         </div>
         <div class="theme-grid">
@@ -138,34 +139,50 @@
             <p data-i18n="themeBciText">Adaptive stimulation, sensorimotor neurofeedback, practical neurotechnology, and feedback-oriented experimental design.</p>
           </article>
           <article class="theme-card">
-            <h3 data-i18n="themeBioTitle">Biomaterials</h3>
-            <p data-i18n="themeBioText">Functional nanoparticles, piezoelectric mechanisms, magnetic guidance, and material-driven neurotechnology.</p>
-          </article>
-          <article class="theme-card">
-            <h3 data-i18n="themeImageTitle">Biomedical image analysis</h3>
-            <p data-i18n="themeImageText">Histological slice processing, object segmentation, OpenCV pipelines, and morphometric preparation.</p>
-          </article>
-          <article class="theme-card">
-            <h3 data-i18n="themeMetricTitle">Metric learning</h3>
-            <p data-i18n="themeMetricText">Triplet-loss variations for EEG embeddings and better generalization across subjects.</p>
-          </article>
-          <article class="theme-card">
-            <h3 data-i18n="themeVisionTitle">Computer vision</h3>
-            <p data-i18n="themeVisionText">Object segmentation, medical image analysis, YOLO/SAM-style pipelines, and deep learning for biomedical visual data.</p>
+            <h3 data-i18n="themeImageTitle">Biomedical image analysis and Computer Vision</h3>
+            <p data-i18n="themeImageText">Histological slice processing, object segmentation, OpenCV pipelines, morphometric preparation, medical image analysis, YOLO/SAM-style pipelines, and deep learning for biomedical visual data.</p>
           </article>
         </div>
       </section>
 
       <section id="projects" class="section">
         <div class="section-heading">
-          <p class="section-label" data-i18n="projectsLabel">Selected work</p>
           <h2 data-i18n="projectsTitle">Projects and research experience</h2>
         </div>
         <div class="timeline">
           <article class="timeline-item">
             <div class="timeline-marker"></div>
             <div>
-              <h3 data-i18n="projectAsdTitle">Attention state detection in children with ASD</h3>
+              <h3>
+                <span data-i18n="projectPelvisTitle">Pelvic CT segmentation support system</span>
+                <span class="project-status" data-i18n="statusProgress">in progress</span>
+              </h3>
+              <p data-i18n="projectPelvisText">
+                ML-based clinical decision support project for pelvic CT: segmentation of pelvic bones and lower limbs.
+              </p>
+              <a href="https://github.com/nikaabigail/CT-Pelvis-3D-Unet" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <h3>
+                <span data-i18n="projectEegnetTitle">EEGNet classifier on JapanDataset</span>
+                <span class="project-status" data-i18n="statusProgress">in progress</span>
+              </h3>
+              <p data-i18n="projectEegnetText">
+                EEG classifier based on EEGNet architecture for experiments with JapanDataset.
+              </p>
+              <a href="https://github.com/nikaabigail/EEGNet_JapanDataset1" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <h3>
+                <span data-i18n="projectAsdTitle">Attention state detection in children with ASD</span>
+                <span class="project-status project-status-done" data-i18n="statusDone">DONE</span>
+              </h3>
               <p data-i18n="projectAsdText">
                 Led the full research cycle from problem definition and literature review to EEG preprocessing, neural
                 network training, collaboration with medical institutions, and paper writing.
@@ -176,17 +193,10 @@
           <article class="timeline-item">
             <div class="timeline-marker"></div>
             <div>
-              <h3 data-i18n="projectMiTitle">ML approaches for EEG and medical imaging</h3>
-              <p data-i18n="projectMiText">
-                Work on neural network pipelines for EEG decoding and medical image analysis, including
-                segmentation-oriented computer vision models and metric-learning experiments.
-              </p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div>
-              <h3 data-i18n="projectHistTitle">Histological slice processing software</h3>
+              <h3>
+                <span data-i18n="projectHistTitle">Histological slice processing software</span>
+                <span class="project-status project-status-done" data-i18n="statusDone">DONE</span>
+              </h3>
               <p data-i18n="projectHistText">
                 Developed a Python application with OpenCV, NumPy, Matplotlib, and PyQt for color correction,
                 normalization, threshold binarization, and morphological operations. Supported by RSF project 23-71-10013.
@@ -247,29 +257,24 @@
             </ul>
           </article>
           <article class="cv-card">
-            <h3 data-i18n="schoolsTitle">Schools and workshops</h3>
+            <h3 data-i18n="schoolsTitle">Schools, workshops, courses</h3>
             <ul>
-              <li><a href="https://siriusuniversity.ru/admission/educational-modules-and-activities/genetika-i-nauki-o-zhizni/neyrotekhnologii-s-osnovami-biomaterialovedeniya/" target="_blank" rel="noreferrer" data-i18n="schoolSirius">Sirius Neurotechnology School, 2025</a></li>
               <li><a href="https://www.hse.ru/en/cdm-centre/bms/2024/polls/969583972.html" target="_blank" rel="noreferrer" data-i18n="schoolHse">HSE brain research school, 2024</a></li>
-              <li><a href="https://www.gtec.at/bci-neurotech-spring-school-2025/?srsltid=AfmBOopQUQ-PEIKj9H3xHRwgR5RFH6zbrTWD9-RUNCML2kWZqdgyePGV" target="_blank" rel="noreferrer" data-i18n="schoolGtec">g.tec BCI & Neurotechnology Spring School, 2025</a></li>
-              <li><a href="https://portal.neuromatchacademy.org/#:~:text=Description-,Computational%20Neuroscience,-Description" target="_blank" rel="noreferrer" data-i18n="schoolNeuromatch">Neuromatch Academy, Computational Neuroscience, 2025</a></li>
+              <li><a href="https://www.linkedin.com/posts/vladimir-baryshev-45a9a2369_after-reflecting-on-my-recent-internship-share-7404066148733906944-yB8S/?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAAFty9gYBS7U8xxCwVI9qxvNHrXUYiVAtC4g" target="_blank" rel="noreferrer" data-i18n="schoolNeuromatch">Neuromatch Academy, Computational Neuroscience, 2025</a></li>
               <li><a href="https://bioelectric.hse.ru/neuroschool2025/" target="_blank" rel="noreferrer" data-i18n="schoolNeurointerfaces">New Generation Neurointerfaces, HSE, 2025</a></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/verify/QAN5O9VIRH25" target="_blank" rel="noreferrer" data-i18n="courseComputational">Coursera: Computational Neuroscience, University of Washington. View certificate</a></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/specialization/L2T2P7MIUW9K" target="_blank" rel="noreferrer" data-i18n="courseNeuroimaging">Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University. View certificate</a></li>
             </ul>
           </article>
           <article class="cv-card">
             <h3 data-i18n="skillsTitle">Software and skills</h3>
             <ul>
-              <li data-i18n="skillsDomains">Domains: EEG, MRI, CT, computer vision, biomedical image segmentation, neurotechnology, and BCI.</li>
-              <li data-i18n="skillsTools">Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, and PyQt.</li>
+              <li data-i18n="skillsDomains">Domains: EEG, MRI, CT, Computer Vision, BCI.</li>
+              <li data-i18n="skillsTools">Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt.</li>
             </ul>
           </article>
         </div>
       </section>
-
-      <footer class="footer">
-        <span>Vladimir Baryshev</span>
-        <span data-i18n="footerText">Personal academic website, ready for GitHub Pages.</span>
-      </footer>
     </main>
 
     <script src="script.js"></script>

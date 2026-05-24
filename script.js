@@ -1,5 +1,6 @@
 const translations = {
   en: {
+    personName: "Vladimir Baryshev",
     skip: "Skip to content",
     navHome: "Home",
     navThemes: "Research themes",
@@ -21,34 +22,29 @@ const translations = {
     thesisLabel: "Master's thesis in progress",
     thesisTitle: "Spatiotemporal neuromodulation and biomimetic neurointerfaces",
     thesisText:
-      "Adaptive stimulation algorithms and sensorimotor neurofeedback systems for next-generation neurointerfaces.",
-    themesLabel: "Research direction",
+      "Goal: develop an adaptive closed-loop spatiotemporal neuromodulation algorithm aimed at restoring motor function within personalized neurorehabilitation.",
+    thesisLink: "GitHub repository",
     themesTitle: "Research themes",
     themeEegTitle: "EEG decoding",
     themeEegText: "Attention state classification, EEG preprocessing, MNE workflows, and neural networks.",
     themeBciTitle: "BCI and neurointerfaces",
     themeBciText:
       "Adaptive stimulation, sensorimotor neurofeedback, practical neurotechnology, and feedback-oriented experimental design.",
-    themeBioTitle: "Biomimetic neurointerfaces",
-    themeBioText:
-      "Functional nanoparticles, piezoelectric mechanisms, magnetic guidance, and material-driven neurotechnology.",
-    themeImageTitle: "Biomedical image analysis",
+    themeImageTitle: "Biomedical image analysis and Computer Vision",
     themeImageText:
-      "Histological slice processing, object segmentation, OpenCV pipelines, and morphometric preparation.",
-    themeMetricTitle: "Metric learning",
-    themeMetricText: "Embedding methods for EEG and biomedical signals with better generalization across subjects.",
-    themeVisionTitle: "Computer vision",
-    themeVisionText:
-      "Object segmentation, medical image analysis, YOLO/SAM-style pipelines, and deep learning for biomedical visual data.",
-    projectsLabel: "Selected work",
+      "Histological slice processing, object segmentation, OpenCV pipelines, morphometric preparation, medical image analysis, YOLO/SAM-style pipelines, and deep learning for biomedical visual data.",
     projectsTitle: "Projects and research experience",
+    statusProgress: "in progress",
+    statusDone: "DONE",
+    projectPelvisTitle: "Pelvic CT segmentation support system",
+    projectPelvisText:
+      "ML-based clinical decision support project for pelvic CT: segmentation of pelvic bones and lower limbs.",
+    projectEegnetTitle: "EEGNet classifier on JapanDataset",
+    projectEegnetText: "EEG classifier based on EEGNet architecture for experiments with JapanDataset.",
     projectAsdTitle: "Attention state detection in children with ASD",
     projectAsdText:
       "Led the full research cycle from problem definition and literature review to EEG preprocessing, neural network training, collaboration with medical institutions, and paper writing.",
     doiLink: "Open DOI",
-    projectMiTitle: "ML approaches for EEG and medical imaging",
-    projectMiText:
-      "Work on neural network pipelines for EEG decoding and medical image analysis, including segmentation-oriented computer vision models and metric-learning experiments.",
     projectHistTitle: "Histological slice processing software",
     projectHistText:
       "Developed a Python application with OpenCV, NumPy, Matplotlib, and PyQt for color correction, normalization, threshold binarization, and morphological operations. Supported by RSF project 23-71-10013.",
@@ -68,19 +64,20 @@ const translations = {
     trainingBioinformatics:
       "Technologies for Controlling Biological Properties: practical course in bioinformatics and molecular biology, NSU, 2025.",
     trainingGenetics: "Molecular genetic methods for investigating living systems, NCFU, 2023.",
-    schoolsTitle: "Schools and workshops",
-    schoolSirius: "Sirius Neurotechnology School, 2025",
+    schoolsTitle: "Schools, workshops, courses",
     schoolHse: "HSE brain research school, 2024",
-    schoolGtec: "g.tec BCI & Neurotechnology Spring School, 2025",
     schoolNeuromatch: "Neuromatch Academy, Computational Neuroscience, 2025",
     schoolNeurointerfaces: "New Generation Neurointerfaces, HSE, 2025",
+    courseComputational: "Coursera: Computational Neuroscience, University of Washington. View certificate",
+    courseNeuroimaging:
+      "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University. View certificate",
     skillsTitle: "Software and skills",
-    skillsDomains: "Domains: EEG, MRI, CT, computer vision, biomedical image segmentation, neurotechnology, and BCI.",
+    skillsDomains: "Domains: EEG, MRI, CT, Computer Vision, BCI.",
     skillsTools:
-      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, and PyQt.",
-    footerText: "Personal academic website, ready for GitHub Pages."
+      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
   },
   ru: {
+    personName: "Владимир Барышев",
     skip: "Перейти к содержимому",
     navHome: "Главная",
     navThemes: "Темы исследований",
@@ -100,37 +97,31 @@ const translations = {
     downloadCv: "Скачать CV",
     viewProjects: "Смотреть проекты",
     thesisLabel: "Тема магистерской диссертации в процессе",
-    thesisTitle:
-      "Пространственно-временная нейромодуляция и биомиметические нейроинтерфейсы",
+    thesisTitle: "Пространственно-временная нейромодуляция и биомиметические нейроинтерфейсы",
     thesisText:
-      "Алгоритмы адаптивной стимуляции и системы сенсомоторного нейрофидбэка.",
-    themesLabel: "Научный фокус",
+      "Цель: разработать адаптивный алгоритм пространственно-временной нейромодуляции с обратной связью, направленный на восстановление двигательной функции в рамках концепции персонализированной нейрореабилитации.",
+    thesisLink: "GitHub-репозиторий",
     themesTitle: "Темы исследований",
     themeEegTitle: "EEG-декодирование",
     themeEegText: "Классификация состояний внимания, preprocessing EEG, MNE-пайплайны и нейронные сети.",
     themeBciTitle: "BCI и нейроинтерфейсы",
     themeBciText:
       "Адаптивная стимуляция, сенсомоторный нейрофидбэк, практическая нейротехнология и экспериментальные схемы с обратной связью.",
-    themeBioTitle: "Биомиметические нейроинтерфейсы",
-    themeBioText:
-      "Функциональные наночастицы, пьезоэлектрические механизмы, магнитное наведение и материалы для нейротехнологий.",
-    themeImageTitle: "Биомедицинские изображения",
+    themeImageTitle: "Biomedical image analysis and Computer Vision",
     themeImageText:
-      "Обработка гистологических срезов, сегментация объектов, OpenCV-пайплайны и подготовка к морфометрии.",
-    themeMetricTitle: "Metric learning",
-    themeMetricText: "Эмбеддинги для EEG и биомедицинских сигналов с лучшей генерализацией между испытуемыми.",
-    themeVisionTitle: "Computer vision",
-    themeVisionText:
-      "Сегментация объектов, анализ медицинских изображений, YOLO/SAM-пайплайны и deep learning для биомедицинских визуальных данных.",
-    projectsLabel: "Избранная работа",
+      "Обработка гистологических срезов, сегментация объектов, OpenCV-пайплайны, подготовка к морфометрии, анализ медицинских изображений, YOLO/SAM-пайплайны и deep learning для биомедицинских визуальных данных.",
     projectsTitle: "Проекты и исследовательский опыт",
+    statusProgress: "in progress",
+    statusDone: "DONE",
+    projectPelvisTitle: "ML-система поддержки врача для тазовой области",
+    projectPelvisText:
+      "Проект поддержки клинического решения для CT: сегментация тазовых костей и нижних конечностей.",
+    projectEegnetTitle: "Классификатор EEGNet на JapanDataset",
+    projectEegnetText: "EEG-классификатор на архитектуре EEGNet для экспериментов с JapanDataset.",
     projectAsdTitle: "Детекция состояния внимания у детей с РАС",
     projectAsdText:
       "Вел полный цикл исследования: постановка задачи, обзор литературы, preprocessing EEG, обучение нейросетей, координация с медицинскими организациями и подготовка статьи.",
     doiLink: "Открыть DOI",
-    projectMiTitle: "ML-подходы для EEG и медицинских изображений",
-    projectMiText:
-      "Работаю над нейросетевыми пайплайнами для EEG-декодирования и анализа медицинских изображений, включая модели компьютерного зрения для сегментации и metric-learning эксперименты.",
     projectHistTitle: "ПО для обработки гистологических срезов",
     projectHistText:
       "Разработал Python-приложение на OpenCV, NumPy, Matplotlib и PyQt для цветокоррекции, нормализации каналов, пороговой бинаризации и морфологических операций. Работа поддержана проектом РНФ 23-71-10013.",
@@ -150,17 +141,17 @@ const translations = {
     trainingBioinformatics:
       "Технологии управления биологическими свойствами: практический курс по биоинформатике и молекулярной биологии, НГУ, 2025.",
     trainingGenetics: "Молекулярно-генетические методы исследования живых систем, СКФУ, 2023.",
-    schoolsTitle: "Школы и воркшопы",
-    schoolSirius: "Школа нейротехнологий Сириуса, 2025",
+    schoolsTitle: "Школы, воркшопы и курсы",
     schoolHse: "Школа исследований мозга НИУ ВШЭ, 2024",
-    schoolGtec: "g.tec BCI & Neurotechnology Spring School, 2025",
     schoolNeuromatch: "Neuromatch Academy, Computational Neuroscience, 2025",
     schoolNeurointerfaces: "Нейроинтерфейсы нового поколения, НИУ ВШЭ, 2025",
-    skillsTitle: "ПО и навыки",
-    skillsDomains: "Сферы: EEG, MRI, CT, computer vision, сегментация биомедицинских изображений, нейротехнологии и BCI.",
+    courseComputational: "Coursera: Computational Neuroscience, University of Washington. Сертификат",
+    courseNeuroimaging:
+      "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University. Сертификат",
+    skillsTitle: "Software and skills",
+    skillsDomains: "Domains: EEG, MRI, CT, Computer Vision, BCI.",
     skillsTools:
-      "Инструменты и модели: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM и PyQt.",
-    footerText: "Персональный академический сайт, готовый для GitHub Pages."
+      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
   }
 };
 
@@ -186,6 +177,7 @@ function setTheme(theme) {
 function setLanguage(language) {
   const labels = translations[language];
   root.lang = language;
+  document.title = labels.personName;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;
     if (labels[key]) node.textContent = labels[key];
