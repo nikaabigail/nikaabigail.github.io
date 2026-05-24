@@ -500,6 +500,13 @@ h3 {
   margin: 10px 0 8px;
 }
 
+.timeline-meta {
+  margin: 4px 0 8px !important;
+  color: var(--accent-2) !important;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
 .timeline-item h3 {
   display: flex;
   flex-wrap: wrap;
@@ -524,6 +531,24 @@ h3 {
 .project-status-done {
   background: color-mix(in srgb, var(--accent-3) 22%, var(--surface));
   color: var(--text);
+}
+
+.role-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+  padding-left: 18px;
+  border-left: 1px solid var(--border);
+}
+
+.role-list h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.role-list p {
+  margin-top: 6px;
 }
 
 .split-section {
