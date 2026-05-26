@@ -276,33 +276,21 @@ const neuronFrame = document.querySelector("[data-neuron-frame]");
 const neuronDesktopQuery = window.matchMedia("(min-width: 1101px)");
 const neuronReducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const neuronFrameCount = Number(neuronFrame?.dataset.frameCount || 0);
-const neuronAssetVersion = "20260526";
+const neuronAssetVersion = "20260526c";
 const neuronBands = {
-  home: [0, 36],
-  thesis: [36, 47],
-  experience: [47, 58],
-  themes: [58, 84],
-  projects: [84, 104],
-  publication: [104, 112],
-  cv: [112, 119]
-};
-const neuronPulseFrames = {
-  home: 36,
-  thesis: 47,
-  experience: 58,
-  themes: 72,
-  projects: 104,
-  publication: 112,
-  cv: 119
+  home: [0, 54],
+  thesis: [55, 84],
+  experience: [85, 114],
+  themes: [115, 144],
+  projects: [165, 184],
+  publication: [170, 184],
+  cv: [175, 184]
 };
 const neuronState = {
   currentFrame: -1,
-  hoverFrame: null,
   activeSectionId: "",
   introStart: 0,
-  raf: 0,
-  pulseTimer: 0,
-  hoverTimer: 0
+  raf: 0
 };
 
 function isNeuronEnabled() {
@@ -358,24 +346,11 @@ function getNearestSection() {
   return nearest || sections[0];
 }
 
-function pulseNeuron() {
-  if (!neuronRail) return;
-  neuronRail.classList.add("is-pulsing");
-  window.clearTimeout(neuronState.pulseTimer);
-  neuronState.pulseTimer = window.setTimeout(() => {
-    neuronRail.classList.remove("is-pulsing");
-  }, 620);
-}
-
 function getScrollNeuronFrame() {
   const activeSection = getNearestSection();
   const id = activeSection?.id || "home";
   const band = neuronBands[id] || neuronBands.home;
-
-  if (id !== neuronState.activeSectionId) {
-    neuronState.activeSectionId = id;
-    pulseNeuron();
-  }
+  neuronState.activeSectionId = id;
 
   const progress = easeOutCubic(getSectionProgress(activeSection));
   return band[0] + (band[1] - band[0]) * progress;
@@ -386,12 +361,7 @@ function updateNeuronFrame() {
   if (!isNeuronEnabled()) return;
 
   if (neuronReducedMotionQuery.matches) {
-    setNeuronFrame(neuronPulseFrames.home);
-    return;
-  }
-
-  if (neuronState.hoverFrame !== null) {
-    setNeuronFrame(neuronState.hoverFrame);
+    setNeuronFrame(neuronBands.home[1]);
     return;
   }
 
@@ -430,34 +400,4 @@ if (isNeuronEnabled()) {
   scheduleNeuronUpdate();
   window.addEventListener("scroll", scheduleNeuronUpdate, { passive: true });
   window.addEventListener("resize", scheduleNeuronUpdate);
-
-  navLinks.forEach((link) => {
-    const sectionId = link.getAttribute("href")?.slice(1);
-    const hoverFrame = neuronPulseFrames[sectionId];
-    if (hoverFrame === undefined) return;
-
-    link.addEventListener("mouseenter", () => {
-      neuronState.hoverFrame = hoverFrame;
-      pulseNeuron();
-      window.clearTimeout(neuronState.hoverTimer);
-      neuronState.hoverTimer = window.setTimeout(() => {
-        neuronState.hoverFrame = null;
-        scheduleNeuronUpdate();
-      }, 900);
-      scheduleNeuronUpdate();
-    });
-
-    link.addEventListener("mouseleave", () => {
-      window.clearTimeout(neuronState.hoverTimer);
-      neuronState.hoverFrame = null;
-      scheduleNeuronUpdate();
-    });
-
-    link.addEventListener("click", () => {
-      window.setTimeout(() => {
-        neuronState.hoverFrame = null;
-        scheduleNeuronUpdate();
-      }, 360);
-    });
-  });
 }
