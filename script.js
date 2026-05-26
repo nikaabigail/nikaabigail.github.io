@@ -270,3 +270,194 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+const neuronRail = document.querySelector(".neuron-rail");
+const neuronFrame = document.querySelector("[data-neuron-frame]");
+const neuronDesktopQuery = window.matchMedia("(min-width: 1101px)");
+const neuronReducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const neuronFrameCount = Number(neuronFrame?.dataset.frameCount || 0);
+const neuronAssetVersion = "20260526";
+const neuronBands = {
+  home: [0, 36],
+  thesis: [36, 47],
+  experience: [47, 58],
+  themes: [58, 84],
+  projects: [84, 104],
+  publication: [104, 112],
+  cv: [112, 119]
+};
+const neuronPulseFrames = {
+  home: 36,
+  thesis: 47,
+  experience: 58,
+  themes: 72,
+  projects: 104,
+  publication: 112,
+  cv: 119
+};
+const neuronState = {
+  currentFrame: -1,
+  hoverFrame: null,
+  activeSectionId: "",
+  introStart: 0,
+  raf: 0,
+  pulseTimer: 0,
+  hoverTimer: 0
+};
+
+function isNeuronEnabled() {
+  return Boolean(neuronRail && neuronFrame && neuronFrameCount && neuronDesktopQuery.matches);
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function easeOutCubic(value) {
+  return 1 - Math.pow(1 - value, 3);
+}
+
+function neuronFrameSrc(frame) {
+  return `assets/neuron-frames/neuron-${String(frame + 1).padStart(3, "0")}.webp?v=${neuronAssetVersion}`;
+}
+
+function setNeuronFrame(frame) {
+  if (!isNeuronEnabled()) return;
+  const nextFrame = clamp(Math.round(frame), 0, neuronFrameCount - 1);
+  if (nextFrame === neuronState.currentFrame) return;
+  neuronState.currentFrame = nextFrame;
+  neuronFrame.src = neuronFrameSrc(nextFrame);
+}
+
+function getSectionProgress(section) {
+  const rect = section.getBoundingClientRect();
+  const anchor = window.innerHeight * 0.58;
+  const travel = rect.height + window.innerHeight * 0.42;
+  return clamp((anchor - rect.top) / travel, 0, 1);
+}
+
+function getNearestSection() {
+  const anchor = window.innerHeight * 0.22;
+  let nearest = sections[0];
+  let nearestDistance = Number.POSITIVE_INFINITY;
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= anchor && rect.bottom >= anchor) {
+      nearest = section;
+      nearestDistance = 0;
+      return;
+    }
+    const distance = Math.abs(rect.top - anchor);
+    if (distance < nearestDistance) {
+      nearest = section;
+      nearestDistance = distance;
+    }
+  });
+
+  return nearest || sections[0];
+}
+
+function pulseNeuron() {
+  if (!neuronRail) return;
+  neuronRail.classList.add("is-pulsing");
+  window.clearTimeout(neuronState.pulseTimer);
+  neuronState.pulseTimer = window.setTimeout(() => {
+    neuronRail.classList.remove("is-pulsing");
+  }, 620);
+}
+
+function getScrollNeuronFrame() {
+  const activeSection = getNearestSection();
+  const id = activeSection?.id || "home";
+  const band = neuronBands[id] || neuronBands.home;
+
+  if (id !== neuronState.activeSectionId) {
+    neuronState.activeSectionId = id;
+    pulseNeuron();
+  }
+
+  const progress = easeOutCubic(getSectionProgress(activeSection));
+  return band[0] + (band[1] - band[0]) * progress;
+}
+
+function updateNeuronFrame() {
+  neuronState.raf = 0;
+  if (!isNeuronEnabled()) return;
+
+  if (neuronReducedMotionQuery.matches) {
+    setNeuronFrame(neuronPulseFrames.home);
+    return;
+  }
+
+  if (neuronState.hoverFrame !== null) {
+    setNeuronFrame(neuronState.hoverFrame);
+    return;
+  }
+
+  const introElapsed = performance.now() - neuronState.introStart;
+  if (window.scrollY < 24 && introElapsed < 1500) {
+    setNeuronFrame(neuronBands.home[1] * easeOutCubic(introElapsed / 1500));
+    scheduleNeuronUpdate();
+    return;
+  }
+
+  setNeuronFrame(getScrollNeuronFrame());
+}
+
+function scheduleNeuronUpdate() {
+  if (!isNeuronEnabled() || neuronState.raf) return;
+  neuronState.raf = window.requestAnimationFrame(updateNeuronFrame);
+}
+
+function preloadNeuronFrames() {
+  if (!isNeuronEnabled()) return;
+  let frame = 0;
+  const loadBatch = () => {
+    for (let count = 0; count < 10 && frame < neuronFrameCount; count += 1, frame += 1) {
+      const image = new Image();
+      image.src = neuronFrameSrc(frame);
+    }
+    if (frame < neuronFrameCount) window.setTimeout(loadBatch, 80);
+  };
+  window.setTimeout(loadBatch, 350);
+}
+
+if (isNeuronEnabled()) {
+  neuronState.introStart = performance.now();
+  setNeuronFrame(0);
+  preloadNeuronFrames();
+  scheduleNeuronUpdate();
+  window.addEventListener("scroll", scheduleNeuronUpdate, { passive: true });
+  window.addEventListener("resize", scheduleNeuronUpdate);
+
+  navLinks.forEach((link) => {
+    const sectionId = link.getAttribute("href")?.slice(1);
+    const hoverFrame = neuronPulseFrames[sectionId];
+    if (hoverFrame === undefined) return;
+
+    link.addEventListener("mouseenter", () => {
+      neuronState.hoverFrame = hoverFrame;
+      pulseNeuron();
+      window.clearTimeout(neuronState.hoverTimer);
+      neuronState.hoverTimer = window.setTimeout(() => {
+        neuronState.hoverFrame = null;
+        scheduleNeuronUpdate();
+      }, 900);
+      scheduleNeuronUpdate();
+    });
+
+    link.addEventListener("mouseleave", () => {
+      window.clearTimeout(neuronState.hoverTimer);
+      neuronState.hoverFrame = null;
+      scheduleNeuronUpdate();
+    });
+
+    link.addEventListener("click", () => {
+      window.setTimeout(() => {
+        neuronState.hoverFrame = null;
+        scheduleNeuronUpdate();
+      }, 360);
+    });
+  });
+}

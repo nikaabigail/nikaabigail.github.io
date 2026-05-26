@@ -2,18 +2,19 @@
 
 :root {
   color-scheme: light;
-  --bg: #f4f1e9;
-  --surface: #fffdf7;
-  --surface-2: #e8e5d7;
+  --bg: #d7d7d7;
+  --surface: #e9e9e5;
+  --surface-2: #cecec9;
   --text: #191c17;
-  --muted: #6f715f;
-  --border: #ded8c8;
+  --muted: #62645a;
+  --border: #c1c1bc;
   --accent: #708066;
   --accent-2: #3e4d39;
   --accent-3: #a77b42;
-  --accent-soft: #e6eadd;
-  --shadow: 0 22px 60px rgba(45, 49, 36, 0.15);
+  --accent-soft: #ccd1c6;
+  --shadow: 0 22px 60px rgba(39, 42, 34, 0.14);
   --sidebar-width: 292px;
+  --neuron-rail-width: clamp(96px, 8vw, 136px);
   --radius: 8px;
   --font: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -244,8 +245,75 @@ svg {
   gap: 8px 14px;
 }
 
+.neuron-rail {
+  position: fixed;
+  inset: 0 auto 0 var(--sidebar-width);
+  z-index: 20;
+  width: var(--neuron-rail-width);
+  pointer-events: none;
+  background: var(--bg);
+  border-left: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--border) 74%, transparent);
+  overflow: hidden;
+}
+
+.neuron-rail::before,
+.neuron-rail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 110px;
+  pointer-events: none;
+}
+
+.neuron-rail::before {
+  top: 0;
+  background: linear-gradient(var(--bg), transparent);
+}
+
+.neuron-rail::after {
+  bottom: 0;
+  background: linear-gradient(transparent, var(--bg));
+}
+
+.neuron-viewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.neuron-frame {
+  width: clamp(190px, 18vw, 265px);
+  max-width: none;
+  height: min(88dvh, 820px);
+  object-fit: contain;
+  opacity: 0.9;
+  transform: translateY(var(--neuron-y, 0px)) scale(var(--neuron-scale, 0.96));
+  filter: saturate(var(--neuron-saturation, 1.04)) brightness(var(--neuron-brightness, 1));
+  transition:
+    opacity 180ms ease,
+    filter 220ms ease,
+    transform 220ms ease;
+  will-change: contents, transform, filter;
+}
+
+.neuron-rail.is-pulsing .neuron-frame {
+  --neuron-scale: 1;
+  --neuron-saturation: 1.26;
+  opacity: 1;
+}
+
+[data-theme="dark"] .neuron-rail {
+  display: none;
+}
+
 .content {
-  margin-left: var(--sidebar-width);
+  margin-left: calc(var(--sidebar-width) + var(--neuron-rail-width));
   min-height: 100dvh;
 }
 
@@ -616,6 +684,14 @@ h3 {
 }
 
 @media (max-width: 1100px) {
+  .neuron-rail {
+    display: none;
+  }
+
+  .content {
+    margin-left: var(--sidebar-width);
+  }
+
   .theme-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
