@@ -2,19 +2,18 @@
 
 :root {
   color-scheme: light;
-  --bg: #d7d7d7;
-  --surface: #e9e9e5;
-  --surface-2: #cecec9;
+  --bg: #f4f1e9;
+  --surface: #fffdf7;
+  --surface-2: #e8e5d7;
   --text: #191c17;
-  --muted: #62645a;
-  --border: #c1c1bc;
+  --muted: #6f715f;
+  --border: #ded8c8;
   --accent: #708066;
   --accent-2: #3e4d39;
   --accent-3: #a77b42;
-  --accent-soft: #ccd1c6;
-  --shadow: 0 22px 60px rgba(39, 42, 34, 0.14);
+  --accent-soft: #e6eadd;
+  --shadow: 0 22px 60px rgba(45, 49, 36, 0.15);
   --sidebar-width: 292px;
-  --neuron-rail-width: clamp(200px, 14.5vw, 230px);
   --radius: 8px;
   --font: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -107,7 +106,7 @@ svg {
   flex-direction: column;
   gap: 28px;
   background: var(--surface);
-  border-right: 0;
+  border-right: 1px solid var(--border);
   overflow-y: auto;
   z-index: 60;
 }
@@ -245,43 +244,8 @@ svg {
   gap: 8px 14px;
 }
 
-.neuron-rail {
-  position: fixed;
-  inset: 0 auto 0 var(--sidebar-width);
-  z-index: 20;
-  width: var(--neuron-rail-width);
-  pointer-events: none;
-  background: var(--bg);
-  overflow: visible;
-}
-
-.neuron-viewport {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  overflow: visible;
-}
-
-.neuron-frame {
-  width: auto;
-  max-width: none;
-  height: 100dvh;
-  object-fit: contain;
-  opacity: 0.98;
-  transition: none;
-  will-change: contents;
-}
-
-[data-theme="dark"] .neuron-rail {
-  display: none;
-}
-
 .content {
-  position: relative;
-  z-index: 30;
-  margin-left: calc(var(--sidebar-width) + var(--neuron-rail-width));
+  margin-left: var(--sidebar-width);
   min-height: 100dvh;
 }
 
@@ -295,8 +259,8 @@ svg {
 .hero {
   min-height: min(800px, 100dvh);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
-  gap: 44px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+  gap: 54px;
   align-items: center;
   padding-top: 80px;
 }
@@ -652,14 +616,6 @@ h3 {
 }
 
 @media (max-width: 1100px) {
-  .neuron-rail {
-    display: none;
-  }
-
-  .content {
-    margin-left: var(--sidebar-width);
-  }
-
   .theme-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
