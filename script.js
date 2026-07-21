@@ -13,11 +13,11 @@ const translations = {
     copyEmail: "Copy email",
     copiedEmail: "Copied",
     profiles: "Profiles",
-    heroLabel: "Neurotechnology | Biomedical AI | Computer Vision",
+    heroLabel: "Neural Decoding | Neurotechnology | Biomedical AI",
     heroLead:
-      "MSc student in Neurotechnology working at the intersection of neural signal processing, brain-computer interfaces, computer vision, and machine learning.",
+      "MSc student in Neurotechnology and Research Collaborator at HSE University's Centre for Bioelectric Interfaces, working at the intersection of neural signal processing, brain-computer interfaces, and machine learning.",
     heroText:
-      "I have led an independent EEG study on attention states in children with ASD, built software for morphological processing of histological images, and now work on ML approaches for EEG and medical image analysis.",
+      "My current work focuses on reconstructing speech from human electrocorticography (ECoG). I build and test neural-decoding approaches, with early results improving on the group's previous speech-decoding benchmark.",
     downloadCv: "Download CV",
     viewProjects: "View projects",
     thesisLabel: "Master's thesis in progress",
@@ -30,11 +30,16 @@ const translations = {
     themeEegText: "Attention state classification, EEG preprocessing, MNE workflows, and neural networks.",
     themeBciTitle: "BCI and neurointerfaces",
     themeBciText:
-      "Adaptive stimulation, sensorimotor neurofeedback, practical neurotechnology, and feedback-oriented experimental design.",
+      "Intracranial speech decoding from ECoG, adaptive stimulation, sensorimotor neurofeedback, and feedback-oriented experimental design.",
     themeImageTitle: "Biomedical image analysis and Computer Vision",
     themeImageText:
       "Histological slice processing, object segmentation, OpenCV pipelines, morphometric preparation, medical image analysis, YOLO/SAM-style pipelines, and deep learning for biomedical visual data.",
     experienceTitle: "Work experience",
+    expHseOrg: "HSE University, Centre for Bioelectric Interfaces",
+    expHseTitle: "Research Collaborator",
+    expHseMeta: "Part-time | Remote | Moscow, Russia | Jun 2026 - Present",
+    expHseText:
+      "Working on intracranial speech decoding from human ECoG recordings. Building and testing new neural-decoding approaches; early results have improved on the group's previous benchmark.",
     expIndependentTitle: "Independent ML Developer / Researcher",
     expIndependentMeta: "Self-employed | Apr 2026 - Present",
     expIndependentText:
@@ -46,9 +51,12 @@ const translations = {
     expAssistantText: "Neural-data analysis, Python, and computer vision.",
     expInternTitle: "Intern",
     expInternMeta: "Internship | Sep 2025 - Nov 2025",
-    projectsTitle: "Pet projects and research experience",
+    projectsTitle: "Selected projects and research experience",
     statusProgress: "in progress",
     statusDone: "DONE",
+    projectSpeechTitle: "Intracranial speech decoding from ECoG",
+    projectSpeechText:
+      "Developing neural-decoding approaches to reconstruct speech from human ECoG recordings; preliminary results improve on the research group's earlier benchmark.",
     projectPelvisTitle: "Pelvic CT segmentation support system",
     projectPelvisText:
       "ML-based clinical decision support project for pelvic CT: segmentation of pelvic bones and lower limbs.",
@@ -85,7 +93,7 @@ const translations = {
     courseNeuroimaging:
       "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University",
     skillsTitle: "Software and skills",
-    skillsDomains: "Domains: EEG, MRI, CT, Computer Vision, BCI.",
+    skillsDomains: "Domains: ECoG speech decoding, EEG, MRI, CT, Computer Vision, BCI.",
     skillsTools:
       "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
   },
@@ -103,11 +111,11 @@ const translations = {
     copyEmail: "Скопировать email",
     copiedEmail: "Скопировано",
     profiles: "Профили",
-    heroLabel: "Нейротехнологии | Биомедицинский AI | Computer Vision",
+    heroLabel: "Декодирование нейросигналов | Нейротехнологии | Биомедицинский AI",
     heroLead:
-      "Магистрант направления нейротехнологий, работающий на стыке обработки нейросигналов, BCI, компьютерного зрения и машинного обучения.",
+      "Магистрант направления нейротехнологий и Research Collaborator в Центре биоэлектрических интерфейсов НИУ ВШЭ, работающий на стыке обработки нейросигналов, BCI и машинного обучения.",
     heroText:
-      "Я вел независимый EEG-проект по классификации состояний внимания у детей с РАС, разработал ПО для морфологической обработки гистологических изображений, а сейчас работаю над ML-подходами для EEG и анализа медицинских изображений.",
+      "Сейчас я занимаюсь реконструкцией речи по электрокортикографии (ECoG) человека. Разрабатываю и тестирую новые подходы к декодированию нейросигналов; первые результаты улучшили предыдущий бенчмарк группы по декодированию речи.",
     downloadCv: "Скачать CV",
     viewProjects: "Смотреть проекты",
     thesisLabel: "Тема магистерской диссертации в процессе",
@@ -120,11 +128,16 @@ const translations = {
     themeEegText: "Классификация состояний внимания, preprocessing EEG, MNE-пайплайны и нейронные сети.",
     themeBciTitle: "BCI и нейроинтерфейсы",
     themeBciText:
-      "Адаптивная стимуляция, сенсомоторный нейрофидбэк, практическая нейротехнология и экспериментальные схемы с обратной связью.",
+      "Инвазивное декодирование речи по ECoG, адаптивная стимуляция, сенсомоторный нейрофидбэк и экспериментальные схемы с обратной связью.",
     themeImageTitle: "Biomedical image analysis and Computer Vision",
     themeImageText:
       "Обработка гистологических срезов, сегментация объектов, OpenCV-пайплайны, подготовка к морфометрии, анализ медицинских изображений, YOLO/SAM-пайплайны и deep learning для биомедицинских визуальных данных.",
     experienceTitle: "Опыт работы",
+    expHseOrg: "НИУ ВШЭ, Центр биоэлектрических интерфейсов",
+    expHseTitle: "Research Collaborator",
+    expHseMeta: "Частичная занятость | Удаленно | Москва, Россия | июнь 2026 - настоящее время",
+    expHseText:
+      "Занимаюсь инвазивным декодированием речи по записям ECoG человека. Разрабатываю и тестирую новые подходы к декодированию нейросигналов; первые результаты улучшили предыдущий бенчмарк группы.",
     expIndependentTitle: "Независимый ML-разработчик / исследователь",
     expIndependentMeta: "Self-employed | апрель 2026 - настоящее время",
     expIndependentText:
@@ -136,9 +149,12 @@ const translations = {
     expAssistantText: "Анализ нейроданных, Python и computer vision.",
     expInternTitle: "Стажер",
     expInternMeta: "Стажировка | сентябрь 2025 - ноябрь 2025",
-    projectsTitle: "Pet-проекты и исследовательский опыт",
+    projectsTitle: "Избранные проекты и исследовательский опыт",
     statusProgress: "in progress",
     statusDone: "DONE",
+    projectSpeechTitle: "Инвазивное декодирование речи по ECoG",
+    projectSpeechText:
+      "Разрабатываю подходы к реконструкции речи по записям ECoG человека; первые результаты улучшили предыдущий бенчмарк исследовательской группы.",
     projectPelvisTitle: "ML-система поддержки врача для тазовой области",
     projectPelvisText:
       "Проект поддержки клинического решения для CT: сегментация тазовых костей и нижних конечностей.",
@@ -175,7 +191,7 @@ const translations = {
     courseNeuroimaging:
       "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University",
     skillsTitle: "Software and skills",
-    skillsDomains: "Domains: EEG, MRI, CT, Computer Vision, BCI.",
+    skillsDomains: "Domains: декодирование речи по ECoG, EEG, MRI, CT, Computer Vision, BCI.",
     skillsTools:
       "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
   }
