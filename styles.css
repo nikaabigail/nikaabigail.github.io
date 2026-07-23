@@ -301,13 +301,6 @@ h1 {
   line-height: 1.35;
 }
 
-.hero-text {
-  max-width: 690px;
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -816,7 +809,6 @@ h2 {
   line-height: 1.42;
 }
 
-.hero-text,
 .theme-card p,
 .timeline-item p,
 .publication-card p,
