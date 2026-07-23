@@ -295,7 +295,8 @@ def build():
         entry(
             "Invasive Myodecoder - EMG/IMU gait-phase decoding",
             "Multimodal neural decoding | Completed",
-            "Built a six-channel invasive EMG and thigh/shank IMU pipeline with YOLO11s-Pose and Unity 3D. CNN-BiLSTM PhaseNet classified stance and swing with 94.3% internal window-level validation accuracy; predictions streamed over TCP.",
+            "Built a six-channel invasive EMG and thigh/shank IMU pipeline with YOLO11s-Pose and Unity 3D. CNN-BiLSTM PhaseNet classified stance and swing with 94.3% internal window-level validation accuracy; predictions streamed over TCP. "
+            f'<link href="https://github.com/nikaabigail/InvasiveMioDecoder-3dModel-main" color="{LINK.hexval()}">GitHub</link>',
             styles,
         )
     )
