@@ -219,7 +219,7 @@ def build():
     story += section("Profile", styles)
     story.append(
         Paragraph(
-            "Neurotechnology MSc student and Research Collaborator focused on decoding information from neural signals with machine learning. Experience spans intracranial ECoG speech decoding, EEG classification, computer vision, and biomedical image analysis, with hands-on work across research design, data processing, neural-network training, and scientific writing.",
+            "Neurotechnology MSc student and Research Collaborator focused on neural decoding with machine learning. Experience spans intracranial ECoG speech decoding, EEG classification, EMG/IMU gait-phase decoding, computer vision, and biomedical image analysis, with hands-on work across research design, data processing, neural-network training, and scientific writing.",
             styles["summary"],
         )
     )
@@ -229,7 +229,7 @@ def build():
         entry(
             "Research Collaborator - HSE University, Centre for Bioelectric Interfaces",
             "Part-time, remote | Moscow, Russia | Jun 2026 - Present",
-            "Work on intracranial speech decoding from human electrocorticography (ECoG). Build and test neural-decoding approaches; preliminary results improve on the group's previous ECoG speech-decoding benchmark.",
+            "Develop intracranial ECoG speech-decoding methods. Best internal experiment: 81.4% accuracy, +11.4 percentage points over the previous 70.0% benchmark. All other methodological and dataset details remain under NDA.",
             styles,
         )
     )
@@ -237,15 +237,15 @@ def build():
         entry(
             "Independent ML Developer / Researcher",
             "Self-employed | Apr 2026 - Present",
-            "Develop research projects in medical image segmentation and EEG classification, including a pelvic CT segmentation support system and an EEGNet classifier on JapanDataset.",
+            "Develop independent ML research in pelvic CT segmentation and EEG decoding; the EEGNet JapanDataset reproduction is currently on hold after a reproducibility audit.",
             styles,
         )
     )
     story.append(
         entry(
-            "Research Assistant / Intern - Skolkovo Institute of Science and Technology, Neurocenter",
+            "Research Assistant / Computer Vision Intern - Skolkovo Institute of Science and Technology, Neurocenter",
             "Research Assistant, part-time: Nov 2025 - Apr 2026 | Intern: Sep 2025 - Nov 2025",
-            "Performed neural-data analysis and built Python and computer-vision workflows for neuroscience research.",
+            "As Research Assistant, built an invasive myodecoder integrating six-channel EMG, thigh/shank IMUs, YOLO11s-Pose, and Unity 3D; CNN-BiLSTM PhaseNet reached 94.3% internal window-level validation accuracy. As Intern, built a real-time sheep pose-estimation pipeline reaching 28.9 FPS at 640 px FP16 on a laptop RTX 5070, with Kalman-smoothed keypoints.",
             styles,
         )
     )
@@ -274,6 +274,7 @@ def build():
             "Lyakhov P. A., Lyakhova U. A., Baboshina V. A., <b>Baryshev V. V.</b>, Nagornov N. N. "
             "<i>Detection of attention state in children with autism spectrum disorder based on neural network classification of electroencephalograms.</i> "
             "Vestnik of Saint Petersburg University. Applied Mathematics. Computer Science. Control Processes, 2025, 21(1), 92-111. Q3 Scopus. "
+            "Four-MLP weighted-average ensemble: 95.90% accuracy, F1 0.9590, MCC 0.9183; +2.92 pp over the prior reported best on a single-participant dataset. "
             f'<link href="https://doi.org/10.21638/spbu10.2025.107" color="{LINK.hexval()}">DOI</link>',
             styles["body"],
         )
@@ -286,7 +287,23 @@ def build():
         entry(
             "Attention-state detection in children with autism spectrum disorder",
             "EEG classification | Published",
-            "Led the full research cycle from problem definition and literature review to EEG preprocessing, neural-network training, collaboration with medical institutions, and paper writing.",
+            "Led the research cycle and co-authored the paper. A four-MLP weighted-average ensemble reached 95.90% accuracy, F1 0.9590, and MCC 0.9183 on 33,936 balanced samples from one participant - 2.92 pp above the prior reported best.",
+            styles,
+        )
+    )
+    story.append(
+        entry(
+            "Invasive Myodecoder - EMG/IMU gait-phase decoding",
+            "Multimodal neural decoding | Completed",
+            "Built a six-channel invasive EMG and thigh/shank IMU pipeline with YOLO11s-Pose and Unity 3D. CNN-BiLSTM PhaseNet classified stance and swing with 94.3% internal window-level validation accuracy; predictions streamed over TCP.",
+            styles,
+        )
+    )
+    story.append(
+        entry(
+            "Real-Time Sheep Pose Estimation with YOLO11-Pose",
+            "Computer vision | Completed",
+            "Built an FP16 real-time animal pose pipeline with Kalman-smoothed keypoints, reaching 28.9 FPS at 640 px on a laptop RTX 5070.",
             styles,
         )
     )
@@ -302,8 +319,8 @@ def build():
     story.append(
         entry(
             "EEGNet classifier on JapanDataset",
-            "EEG deep learning | In progress",
-            "Develop and evaluate an EEG classifier based on the EEGNet architecture. "
+            "EEG deep learning | On hold",
+            "Audited 10 sessions of 128-channel EEG. Balanced accuracy: 55.6% / 54.9% / 33.4% for overt / minimally overt / covert speech versus 94.6% / 94.9% / 91.1% reported; identified likely checkpoint and train/evaluation preprocessing inconsistencies whose causal contribution remains unconfirmed. "
             f'<link href="https://github.com/nikaabigail/EEGNet_JapanDataset1" color="{LINK.hexval()}">GitHub</link>',
             styles,
         )
@@ -320,9 +337,9 @@ def build():
     story += section("Technical skills", styles)
     story.append(bullet("<b>Programming:</b> Python; basic Git and Linux", styles))
     story.append(bullet("<b>ML and scientific computing:</b> PyTorch, NumPy, MNE, Matplotlib", styles))
-    story.append(bullet("<b>Neural and biomedical data:</b> ECoG, EEG, MRI, CT, neural decoding, signal preprocessing", styles))
-    story.append(bullet("<b>Computer vision:</b> OpenCV, 3D U-Net, nnU-Net, YOLO, SAM, DeepLabCut", styles))
-    story.append(bullet("<b>Application development:</b> PyQt", styles))
+    story.append(bullet("<b>Neural and biomedical data:</b> ECoG, EEG, EMG, IMU, MRI, CT, neural decoding, signal preprocessing", styles))
+    story.append(bullet("<b>Computer vision:</b> OpenCV, YOLO11-Pose, 3D U-Net, nnU-Net, SAM, DeepLabCut", styles))
+    story.append(bullet("<b>Application development:</b> Unity, TCP integration, PyQt", styles))
 
     story += section("Selected training", styles)
     story.append(bullet("Neuromatch Academy - Computational Neuroscience, 2025", styles))
