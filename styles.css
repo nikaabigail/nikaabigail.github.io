@@ -533,6 +533,11 @@ h3 {
   color: var(--text);
 }
 
+.project-status-frozen {
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
 .role-list {
   display: grid;
   gap: 16px;

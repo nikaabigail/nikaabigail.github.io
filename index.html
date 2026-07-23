@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Vladimir Baryshev - ECoG speech decoding, neurotechnology, biomedical AI, computer vision, and brain-computer interface research."
+      content="Vladimir Baryshev - ECoG speech decoding, EEG research, EMG/IMU gait decoding, biomedical AI, computer vision, and brain-computer interfaces."
     />
     <title>Vladimir Baryshev</title>
     <link rel="icon" type="image/svg+xml" href="assets/bci-array.svg" />
@@ -94,9 +94,9 @@
             machine learning.
           </p>
           <p class="hero-text" data-i18n="heroText">
-            My current work focuses on reconstructing speech from human electrocorticography (ECoG). I build and
-            test neural-decoding approaches, with early results improving on the group's previous speech-decoding
-            benchmark.
+            My current work focuses on reconstructing speech from human electrocorticography (ECoG). The best internal
+            experiment reached 81.4% accuracy, 11.4 percentage points above the previous 70.0% benchmark; all other
+            details remain under NDA.
           </p>
           <div class="hero-actions">
             <a class="primary-action" href="assets/vladimir-baryshev-cv.pdf" target="_blank" rel="noreferrer">
@@ -143,8 +143,9 @@
                   <h4 data-i18n="expHseTitle">Research Collaborator</h4>
                   <p class="timeline-meta" data-i18n="expHseMeta">Part-time | Remote | Moscow, Russia | Jun 2026 - Present</p>
                   <p data-i18n="expHseText">
-                    Working on intracranial speech decoding from human ECoG recordings. Building and testing new
-                    neural-decoding approaches; early results have improved on the group's previous benchmark.
+                    Developing intracranial ECoG speech-decoding methods. The best internal experiment reached 81.4%
+                    accuracy, improving the previous 70.0% benchmark by 11.4 percentage points; all other methodological
+                    and dataset details remain under NDA.
                   </p>
                 </div>
               </div>
@@ -156,8 +157,8 @@
               <h3 data-i18n="expIndependentTitle">Independent ML Developer / Researcher</h3>
               <p class="timeline-meta" data-i18n="expIndependentMeta">Self-employed | Apr 2026 - Present</p>
               <p data-i18n="expIndependentText">
-                Continue developing pet projects in medical image segmentation and EEG classification: CT pelvis
-                segmentation support system and EEGNet classifier on JapanDataset.
+                Develop independent ML research in pelvic CT segmentation and EEG decoding; the EEGNet JapanDataset
+                reproduction is currently on hold after a reproducibility audit.
               </p>
             </div>
           </article>
@@ -170,11 +171,19 @@
                 <div>
                   <h4 data-i18n="expAssistantTitle">Research Assistant</h4>
                   <p class="timeline-meta" data-i18n="expAssistantMeta">Part-time | Nov 2025 - Apr 2026</p>
-                  <p data-i18n="expAssistantText">Neural-data analysis, Python, and computer vision.</p>
+                  <p data-i18n="expAssistantText">
+                    Built an invasive myodecoder integrating six-channel EMG, thigh/shank IMUs, and YOLO11s-Pose.
+                    Developed a CNN-BiLSTM PhaseNet classifier with 94.3% internal window-level validation accuracy and
+                    streamed predictions to Unity 3D over TCP.
+                  </p>
                 </div>
                 <div>
                   <h4 data-i18n="expInternTitle">Intern</h4>
                   <p class="timeline-meta" data-i18n="expInternMeta">Internship | Sep 2025 - Nov 2025</p>
+                  <p data-i18n="expInternText">
+                    Built a real-time sheep pose-estimation pipeline with YOLO11-Pose, reaching 28.9 FPS at 640 px with
+                    FP16 inference on a laptop RTX 5070; stabilized keypoints with Kalman filtering.
+                  </p>
                 </div>
               </div>
             </div>
@@ -215,8 +224,36 @@
                 <span class="project-status" data-i18n="statusProgress">in progress</span>
               </h3>
               <p data-i18n="projectSpeechText">
-                Developing neural-decoding approaches to reconstruct speech from human ECoG recordings;
-                preliminary results improve on the research group's earlier benchmark.
+                Developing neural methods to reconstruct speech from intracranial ECoG recordings. The best internal
+                experiment reached 81.4% accuracy, 11.4 percentage points above the previous 70.0% benchmark. All other
+                details remain under NDA.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <h3>
+                <span data-i18n="projectMyodecoderTitle">Invasive Myodecoder: EMG/IMU Gait-Phase Decoding</span>
+                <span class="project-status project-status-done" data-i18n="statusDone">DONE</span>
+              </h3>
+              <p data-i18n="projectMyodecoderText">
+                Built a multimodal gait-phase system integrating six-channel invasive EMG, thigh/shank IMUs, and
+                YOLO11s-Pose. A CNN-BiLSTM PhaseNet classified stance and swing with 94.3% internal window-level
+                validation accuracy; predictions were streamed over TCP to Unity 3D.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div>
+              <h3>
+                <span data-i18n="projectSheepTitle">Real-Time Sheep Pose Estimation with YOLO11-Pose</span>
+                <span class="project-status project-status-done" data-i18n="statusDone">DONE</span>
+              </h3>
+              <p data-i18n="projectSheepText">
+                Built a real-time animal pose-estimation pipeline with FP16 inference and Kalman-smoothed keypoints. It
+                processed 640 px video at 28.9 FPS on a laptop RTX 5070.
               </p>
             </div>
           </article>
@@ -238,10 +275,13 @@
             <div>
               <h3>
                 <span data-i18n="projectEegnetTitle">EEGNet classifier on JapanDataset</span>
-                <span class="project-status" data-i18n="statusProgress">in progress</span>
+                <span class="project-status project-status-frozen" data-i18n="statusFrozen">ON HOLD</span>
               </h3>
               <p data-i18n="projectEegnetText">
-                EEG classifier based on EEGNet architecture for experiments with JapanDataset.
+                Reproduced and audited an EEGNet pipeline across 10 sessions of 128-channel EEG. Offline balanced
+                accuracy reached 55.6%, 54.9%, and 33.4% for overt, minimally overt, and covert speech, versus 94.6%,
+                94.9%, and 91.1% reported in the paper. Likely checkpoint-selection and train/evaluation preprocessing
+                inconsistencies were identified; their causal contribution remains unconfirmed.
               </p>
               <a href="https://github.com/nikaabigail/EEGNet_JapanDataset1" target="_blank" rel="noreferrer">GitHub</a>
             </div>
@@ -254,8 +294,10 @@
                 <span class="project-status project-status-done" data-i18n="statusDone">DONE</span>
               </h3>
               <p data-i18n="projectAsdText">
-                Led the full research cycle from problem definition and literature review to EEG preprocessing, neural
-                network training, collaboration with medical institutions, and paper writing.
+                Led the research cycle and co-authored an EEG attention-state study in a participant with ASD. A
+                weighted-average four-MLP ensemble achieved 95.90% accuracy, F1 0.9590, and MCC 0.9183 on 33,936
+                balanced samples - 2.92 percentage points above the prior best. The single-participant dataset limits
+                cross-subject generalization.
               </p>
               <a href="https://doi.org/10.21638/spbu10.2025.107" target="_blank" rel="noreferrer" data-i18n="doiLink">Open DOI</a>
             </div>
@@ -292,6 +334,10 @@
           <p data-i18n="publicationMeta">
             Vestnik of Saint Petersburg University. Applied Mathematics. Computer Science. Control Processes, 2025,
             vol. 21, issue 1, pp. 92-111. Q3 Scopus.
+          </p>
+          <p data-i18n="publicationResult">
+            Weighted-average four-MLP ensemble: 95.90% accuracy, F1 0.9590, and MCC 0.9183 on 33,936 balanced samples
+            from one participant; 2.92 percentage points above the previous reported best result.
           </p>
           <div class="link-row">
             <a href="https://doi.org/10.21638/spbu10.2025.107" target="_blank" rel="noreferrer">DOI</a>
@@ -339,8 +385,8 @@
           <article class="cv-card">
             <h3 data-i18n="skillsTitle">Software and skills</h3>
             <ul>
-              <li data-i18n="skillsDomains">Domains: ECoG speech decoding, EEG, MRI, CT, Computer Vision, BCI.</li>
-              <li data-i18n="skillsTools">Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt.</li>
+              <li data-i18n="skillsDomains">Domains: ECoG speech decoding, EEG, EMG/IMU gait decoding, MRI, CT, Computer Vision, BCI.</li>
+              <li data-i18n="skillsTools">Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO11-Pose, 3D U-Net, nnU-Net, SAM, DeepLabCut, Unity and PyQt.</li>
             </ul>
           </article>
         </div>

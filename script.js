@@ -17,7 +17,7 @@ const translations = {
     heroLead:
       "MSc student in Neurotechnology and Research Collaborator at HSE University's Centre for Bioelectric Interfaces, working at the intersection of neural signal processing, brain-computer interfaces, and machine learning.",
     heroText:
-      "My current work focuses on reconstructing speech from human electrocorticography (ECoG). I build and test neural-decoding approaches, with early results improving on the group's previous speech-decoding benchmark.",
+      "My current work focuses on reconstructing speech from human electrocorticography (ECoG). The best internal experiment reached 81.4% accuracy, 11.4 percentage points above the previous 70.0% benchmark; all other details remain under NDA.",
     downloadCv: "Download CV",
     viewProjects: "View projects",
     thesisLabel: "Master's thesis in progress",
@@ -39,32 +39,43 @@ const translations = {
     expHseTitle: "Research Collaborator",
     expHseMeta: "Part-time | Remote | Moscow, Russia | Jun 2026 - Present",
     expHseText:
-      "Working on intracranial speech decoding from human ECoG recordings. Building and testing new neural-decoding approaches; early results have improved on the group's previous benchmark.",
+      "Developing intracranial ECoG speech-decoding methods. The best internal experiment reached 81.4% accuracy, improving the previous 70.0% benchmark by 11.4 percentage points; all other methodological and dataset details remain under NDA.",
     expIndependentTitle: "Independent ML Developer / Researcher",
     expIndependentMeta: "Self-employed | Apr 2026 - Present",
     expIndependentText:
-      "Continue developing pet projects in medical image segmentation and EEG classification: CT pelvis segmentation support system and EEGNet classifier on JapanDataset.",
+      "Develop independent ML research in pelvic CT segmentation and EEG decoding; the EEGNet JapanDataset reproduction is currently on hold after a reproducibility audit.",
     expSkoltechTitle: "Skolkovo Institute of Science and Technology, Neurocenter",
     expSkoltechMeta: "Remote | Moscow, Russia | Sep 2025 - Apr 2026",
     expAssistantTitle: "Research Assistant",
     expAssistantMeta: "Part-time | Nov 2025 - Apr 2026",
-    expAssistantText: "Neural-data analysis, Python, and computer vision.",
+    expAssistantText:
+      "Built an invasive myodecoder integrating six-channel EMG, thigh/shank IMUs, and YOLO11s-Pose. Developed a CNN-BiLSTM PhaseNet classifier with 94.3% internal window-level validation accuracy and streamed predictions to Unity 3D over TCP.",
     expInternTitle: "Intern",
     expInternMeta: "Internship | Sep 2025 - Nov 2025",
+    expInternText:
+      "Built a real-time sheep pose-estimation pipeline with YOLO11-Pose, reaching 28.9 FPS at 640 px with FP16 inference on a laptop RTX 5070; stabilized keypoints with Kalman filtering.",
     projectsTitle: "Selected projects and research experience",
     statusProgress: "in progress",
     statusDone: "DONE",
+    statusFrozen: "ON HOLD",
     projectSpeechTitle: "Intracranial speech decoding from ECoG",
     projectSpeechText:
-      "Developing neural-decoding approaches to reconstruct speech from human ECoG recordings; preliminary results improve on the research group's earlier benchmark.",
+      "Developing neural methods to reconstruct speech from intracranial ECoG recordings. The best internal experiment reached 81.4% accuracy, 11.4 percentage points above the previous 70.0% benchmark. All other details remain under NDA.",
+    projectMyodecoderTitle: "Invasive Myodecoder: EMG/IMU Gait-Phase Decoding",
+    projectMyodecoderText:
+      "Built a multimodal gait-phase system integrating six-channel invasive EMG, thigh/shank IMUs, and YOLO11s-Pose. A CNN-BiLSTM PhaseNet classified stance and swing with 94.3% internal window-level validation accuracy; predictions were streamed over TCP to Unity 3D.",
+    projectSheepTitle: "Real-Time Sheep Pose Estimation with YOLO11-Pose",
+    projectSheepText:
+      "Built a real-time animal pose-estimation pipeline with FP16 inference and Kalman-smoothed keypoints. It processed 640 px video at 28.9 FPS on a laptop RTX 5070.",
     projectPelvisTitle: "Pelvic CT segmentation support system",
     projectPelvisText:
       "ML-based clinical decision support project for pelvic CT: segmentation of pelvic bones and lower limbs.",
     projectEegnetTitle: "EEGNet classifier on JapanDataset",
-    projectEegnetText: "EEG classifier based on EEGNet architecture for experiments with JapanDataset.",
+    projectEegnetText:
+      "Reproduced and audited an EEGNet pipeline across 10 sessions of 128-channel EEG. Offline balanced accuracy reached 55.6%, 54.9%, and 33.4% for overt, minimally overt, and covert speech, versus 94.6%, 94.9%, and 91.1% reported in the paper. Likely checkpoint-selection and train/evaluation preprocessing inconsistencies were identified; their causal contribution remains unconfirmed.",
     projectAsdTitle: "Attention state detection in children with ASD",
     projectAsdText:
-      "Led the full research cycle from problem definition and literature review to EEG preprocessing, neural network training, collaboration with medical institutions, and paper writing.",
+      "Led the research cycle and co-authored an EEG attention-state study in a participant with ASD. A weighted-average four-MLP ensemble achieved 95.90% accuracy, F1 0.9590, and MCC 0.9183 on 33,936 balanced samples - 2.92 percentage points above the prior best. The single-participant dataset limits cross-subject generalization.",
     doiLink: "Open DOI",
     projectHistTitle: "Histological slice processing software",
     projectHistText:
@@ -75,6 +86,8 @@ const translations = {
       "Detection of attention state in children with autism spectrum disorder based on neural network classification of electroencephalograms.",
     publicationMeta:
       "Vestnik of Saint Petersburg University. Applied Mathematics. Computer Science. Control Processes, 2025, vol. 21, issue 1, pp. 92-111. Q3 Scopus.",
+    publicationResult:
+      "Weighted-average four-MLP ensemble: 95.90% accuracy, F1 0.9590, and MCC 0.9183 on 33,936 balanced samples from one participant; 2.92 percentage points above the previous reported best result.",
     cvLabel: "Background",
     cvTitle: "CV highlights",
     educationTitle: "Education",
@@ -93,9 +106,9 @@ const translations = {
     courseNeuroimaging:
       "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University",
     skillsTitle: "Software and skills",
-    skillsDomains: "Domains: ECoG speech decoding, EEG, MRI, CT, Computer Vision, BCI.",
+    skillsDomains: "Domains: ECoG speech decoding, EEG, EMG/IMU gait decoding, MRI, CT, Computer Vision, BCI.",
     skillsTools:
-      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
+      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO11-Pose, 3D U-Net, nnU-Net, SAM, DeepLabCut, Unity and PyQt."
   },
   ru: {
     personName: "Владимир Барышев",
@@ -115,7 +128,7 @@ const translations = {
     heroLead:
       "Магистрант направления нейротехнологий и Research Collaborator в Центре биоэлектрических интерфейсов НИУ ВШЭ, работающий на стыке обработки нейросигналов, BCI и машинного обучения.",
     heroText:
-      "Сейчас я занимаюсь реконструкцией речи по электрокортикографии (ECoG) человека. Разрабатываю и тестирую новые подходы к декодированию нейросигналов; первые результаты улучшили предыдущий бенчмарк группы по декодированию речи.",
+      "Сейчас я занимаюсь реконструкцией речи по электрокортикографии (ECoG) человека. Лучший внутренний эксперимент достиг точности 81,4% — на 11,4 п.п. выше предыдущего бенчмарка 70,0%; остальные детали защищены NDA.",
     downloadCv: "Скачать CV",
     viewProjects: "Смотреть проекты",
     thesisLabel: "Тема магистерской диссертации в процессе",
@@ -137,32 +150,43 @@ const translations = {
     expHseTitle: "Research Collaborator",
     expHseMeta: "Частичная занятость | Удаленно | Москва, Россия | июнь 2026 - настоящее время",
     expHseText:
-      "Занимаюсь инвазивным декодированием речи по записям ECoG человека. Разрабатываю и тестирую новые подходы к декодированию нейросигналов; первые результаты улучшили предыдущий бенчмарк группы.",
+      "Разрабатываю методы декодирования речи по инвазивным сигналам ECoG. Лучший внутренний эксперимент достиг точности 81,4% — на 11,4 п.п. выше предыдущего бенчмарка 70,0%; остальные сведения о методах и данных защищены NDA.",
     expIndependentTitle: "Независимый ML-разработчик / исследователь",
     expIndependentMeta: "Self-employed | апрель 2026 - настоящее время",
     expIndependentText:
-      "Продолжаю вести pet-проекты по сегментации медицинских изображений и классификации EEG: систему поддержки врача для CT тазовой области и классификатор EEGNet на JapanDataset.",
+      "Веду независимые ML-исследования по сегментации тазовой области на CT и декодированию EEG; воспроизведение EEGNet на JapanDataset сейчас приостановлено после аудита воспроизводимости.",
     expSkoltechTitle: "Сколковский институт науки и технологий, Нейроцентр",
     expSkoltechMeta: "Удаленно | Москва, Россия | сентябрь 2025 - апрель 2026",
     expAssistantTitle: "Research Assistant",
     expAssistantMeta: "Частичная занятость | ноябрь 2025 - апрель 2026",
-    expAssistantText: "Анализ нейроданных, Python и computer vision.",
+    expAssistantText:
+      "Разработал инвазивный миодекодер, объединив шестиканальную EMG, IMU бедра и голени и YOLO11s-Pose. Создал CNN-BiLSTM-модель PhaseNet с внутренней валидационной точностью 94,3% на уровне окон и реализовал передачу предсказаний по TCP в Unity 3D.",
     expInternTitle: "Стажер",
     expInternMeta: "Стажировка | сентябрь 2025 - ноябрь 2025",
+    expInternText:
+      "Разработал систему оценки позы овец в реальном времени на основе YOLO11-Pose: 28,9 FPS при 640 px и FP16-инференсе на ноутбуке с RTX 5070; стабилизировал ключевые точки фильтром Калмана.",
     projectsTitle: "Избранные проекты и исследовательский опыт",
     statusProgress: "in progress",
     statusDone: "DONE",
+    statusFrozen: "ПРИОСТАНОВЛЕН",
     projectSpeechTitle: "Инвазивное декодирование речи по ECoG",
     projectSpeechText:
-      "Разрабатываю подходы к реконструкции речи по записям ECoG человека; первые результаты улучшили предыдущий бенчмарк исследовательской группы.",
+      "Разрабатываю нейросетевые методы реконструкции речи по инвазивным записям ECoG. Лучший внутренний эксперимент достиг точности 81,4%, превысив предыдущий бенчмарк 70,0% на 11,4 п.п. Остальные детали защищены NDA.",
+    projectMyodecoderTitle: "Invasive Myodecoder: декодирование фаз ходьбы по EMG и IMU",
+    projectMyodecoderText:
+      "Разработал мультимодальную систему распознавания фаз ходьбы, объединяющую шестиканальную инвазивную EMG, IMU бедра и голени и YOLO11s-Pose. CNN-BiLSTM-модель PhaseNet распознавала фазы опоры и переноса с внутренней валидационной точностью 94,3% на уровне окон; предсказания передавались по TCP в Unity 3D.",
+    projectSheepTitle: "Real-Time Sheep Pose Estimation with YOLO11-Pose",
+    projectSheepText:
+      "Разработал систему оценки позы животных в реальном времени с FP16-инференсом и сглаживанием ключевых точек фильтром Калмана. Система обрабатывала видео 640 px со скоростью 28,9 FPS на ноутбуке с RTX 5070.",
     projectPelvisTitle: "ML-система поддержки врача для тазовой области",
     projectPelvisText:
       "Проект поддержки клинического решения для CT: сегментация тазовых костей и нижних конечностей.",
     projectEegnetTitle: "Классификатор EEGNet на JapanDataset",
-    projectEegnetText: "EEG-классификатор на архитектуре EEGNet для экспериментов с JapanDataset.",
+    projectEegnetText:
+      "Воспроизвел и провел аудит EEGNet-пайплайна на 10 сессиях 128-канальной EEG. Offline balanced accuracy составила 55,6%, 54,9% и 33,4% для overt, minimally overt и covert speech против 94,6%, 94,9% и 91,1% в статье. Выявлены вероятные несоответствия выбора чекпоинта и train/evaluation preprocessing; их причинная роль пока не подтверждена.",
     projectAsdTitle: "Детекция состояния внимания у детей с РАС",
     projectAsdText:
-      "Вел полный цикл исследования: постановка задачи, обзор литературы, preprocessing EEG, обучение нейросетей, координация с медицинскими организациями и подготовка статьи.",
+      "Вел исследовательский цикл и стал соавтором работы по распознаванию состояния внимания у участника с РАС по EEG. Взвешенный ансамбль из четырех MLP достиг точности 95,90%, F1 0,9590 и MCC 0,9183 на 33 936 сбалансированных примерах — на 2,92 п.п. выше предыдущего лучшего результата. Данные одного участника ограничивают межсубъектную обобщаемость.",
     doiLink: "Открыть DOI",
     projectHistTitle: "ПО для обработки гистологических срезов",
     projectHistText:
@@ -173,6 +197,8 @@ const translations = {
       "Detection of attention state in children with autism spectrum disorder based on neural network classification of electroencephalograms.",
     publicationMeta:
       "Vestnik of Saint Petersburg University. Applied Mathematics. Computer Science. Control Processes, 2025, vol. 21, issue 1, pp. 92-111. Q3 Scopus.",
+    publicationResult:
+      "Взвешенный ансамбль из четырех MLP: точность 95,90%, F1 0,9590 и MCC 0,9183 на 33 936 сбалансированных примерах одного участника; на 2,92 п.п. выше предыдущего опубликованного лучшего результата.",
     cvLabel: "Бэкграунд",
     cvTitle: "Ключевые пункты CV",
     educationTitle: "Образование",
@@ -191,9 +217,9 @@ const translations = {
     courseNeuroimaging:
       "Coursera: Neuroscience and Neuroimaging Specialization, Johns Hopkins University",
     skillsTitle: "Software and skills",
-    skillsDomains: "Domains: декодирование речи по ECoG, EEG, MRI, CT, Computer Vision, BCI.",
+    skillsDomains: "Domains: декодирование речи по ECoG, EEG, декодирование ходьбы по EMG/IMU, MRI, CT, Computer Vision, BCI.",
     skillsTools:
-      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO, 3D U-Net, nnU-Net, SAM, DeepLabCut and PyQt."
+      "Tools and models: Python, PyTorch, NumPy, MNE, OpenCV, Matplotlib, YOLO11-Pose, 3D U-Net, nnU-Net, SAM, DeepLabCut, Unity и PyQt."
   }
 };
 
