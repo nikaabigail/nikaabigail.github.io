@@ -13,11 +13,9 @@ const translations = {
     copyEmail: "Copy email",
     copiedEmail: "Copied",
     profiles: "Profiles",
-    heroLabel: "Neural Decoding | Neurotechnology | Biomedical AI",
+    heroLabel: "Neural Decoding | BCI | Biomedical AI",
     heroLead:
-      "MSc student in Neurotechnology and Research Collaborator at HSE University's Centre for Bioelectric Interfaces, working at the intersection of neural signal processing, brain-computer interfaces, and machine learning.",
-    heroText:
-      "My current work focuses on reconstructing speech from human electrocorticography (ECoG). The best internal experiment reached 81.4% accuracy, 11.4 percentage points above the previous 70.0% benchmark; all other details remain under NDA.",
+      "MSc student in Neurotechnology and Research Collaborator at HSE University's Centre for Bioelectric Interfaces.",
     downloadCv: "Download CV",
     viewProjects: "View projects",
     thesisLabel: "Master's thesis in progress",
@@ -124,11 +122,9 @@ const translations = {
     copyEmail: "Скопировать email",
     copiedEmail: "Скопировано",
     profiles: "Профили",
-    heroLabel: "Декодирование нейросигналов | Нейротехнологии | Биомедицинский AI",
+    heroLabel: "Декодирование нейросигналов | BCI | Биомедицинский AI",
     heroLead:
-      "Магистрант направления нейротехнологий и Research Collaborator в Центре биоэлектрических интерфейсов НИУ ВШЭ, работающий на стыке обработки нейросигналов, BCI и машинного обучения.",
-    heroText:
-      "Сейчас я занимаюсь реконструкцией речи по электрокортикографии (ECoG) человека. Лучший внутренний эксперимент достиг точности 81,4% — на 11,4 п.п. выше предыдущего бенчмарка 70,0%; остальные детали защищены NDA.",
+      "Магистрант по нейротехнологиям и Research Collaborator в Центре биоэлектрических интерфейсов НИУ ВШЭ.",
     downloadCv: "Скачать CV",
     viewProjects: "Смотреть проекты",
     thesisLabel: "Тема магистерской диссертации в процессе",
